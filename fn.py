@@ -3,6 +3,11 @@ fn.py
 Define functions
 """
 
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
+import os
+
 def download_wait(path_to_downloads):
     """
     From https://stackoverflow.com/questions/34338897/python-selenium-find-out-when-a-download-has-completed
@@ -10,7 +15,7 @@ def download_wait(path_to_downloads):
     seconds = 0
     dl_wait = True
     while dl_wait:
-        time.sleep(1)
+        time.sleep(15)
         dl_wait = False
         for fname in os.listdir(path_to_downloads):
             if fname.endswith('.crdownload'):
@@ -19,7 +24,7 @@ def download_wait(path_to_downloads):
     return seconds
 
 
-def find_by_day_elements():
+def find_by_day_elements(driver):
     """
     Capture all "headers" for pictures by day
     Returns dictionary of {day_as_string: select "all" button for that day}

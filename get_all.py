@@ -36,7 +36,7 @@ driver.find_element_by_id('ap_password').send_keys('Mypa33wr!d')
 time.sleep(2)
 
 
-years = list(range(2008,2020))
+years = list(range(2011,2020))
 months = list(range(1,13))
 
 for year in years:
